@@ -11,7 +11,7 @@ class BookAppointmentRouter extends RouterBase {
             let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
             let findObj = {
                 userId: req.userId,
-                date: date.toISOString()
+                date: date.toISOString().split('T')[0]
             }
             aptMdl.findOne(findObj, (err, apt) => {
                 if (err) {
@@ -55,7 +55,7 @@ class BookAppointmentRouter extends RouterBase {
             let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
             let findObj = {
                 userId: req.userId,
-                date: date.toISOString()
+                date: date.toISOString().split('T')[0]
             }
             aptMdl.findOne(findObj, (err, apt) => {
                 if (err) {
