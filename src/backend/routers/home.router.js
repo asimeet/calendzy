@@ -6,7 +6,8 @@ class HomeRouter extends RouterBase {
     prepareResponse() {
 
         this.router.get('/',this.auth.verifyToken,(req, res) => {
-            this.userMdl.findOne({_id: req.userId}, (err, data)=>{
+            this.userMdl.findOne({_id: req.userId}, (err, data) =>{
+                if(err) throw err;
                 let userName = data.name;
                 res.render('home',{
                     userName: userName.toUpperCase()
