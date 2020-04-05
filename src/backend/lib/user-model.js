@@ -1,8 +1,17 @@
-let mongoose = require('mongoose');  
-let UserSchema = new mongoose.Schema({  
-  name: String,
-  email: String,
-  password: String
+let mongoose = require('mongoose');
+let UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
 });
 
 let usrMdl = mongoose.model('cl_user', UserSchema);
