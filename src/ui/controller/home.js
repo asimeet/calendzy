@@ -84,8 +84,8 @@ class Calender {
                     if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                         cell.classList.add("bg-info");
                         cell.classList.add("selected-date");
-                        let fromDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                        this.list(fromDate.toISOString());
+                        let bookingDT = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                        this.list(bookingDT.toISOString());
                     } // color today's date
                     //cell.appendChild(cellText);
                     cell.innerText = date;
@@ -131,10 +131,10 @@ class Calender {
         event.toElement.classList.add('bg-info');
         event.toElement.classList.add('selected-date');
         let currentDT =  new Date();
-        let fromDate = new Date(year, month, date).toISOString()
-        calender.list(fromDate);
+        let bookingDT= new Date(year, month, date).toISOString()
+        calender.list(bookingDT);
     }
-    list(fromDate) {
+    list(bookingDT) {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function (err, data) {
             if (this.readyState == 4 && this.status == 200) {
@@ -155,7 +155,7 @@ class Calender {
         xhttp.setRequestHeader("Content-type", "application/json");
 
         let body = JSON.stringify({
-            fromDate: fromDate
+            date: bookingDT
         });
 
         xhttp.send(body);
@@ -177,6 +177,7 @@ class Calender {
         let toDT = new Date(bookingDT);
         toDT.setHours(tohour, tomin, 0, 0);
         let body = {
+            date: bookingDT.toISOString(),
             fromDate: fromDT.toISOString(),
             toDate: toDT.toISOString(),
             bookNotes: bookNotes

@@ -7,7 +7,7 @@ class BookAppointmentRouter extends RouterBase {
     prepareResponse() {
 
         this.router.post('/book', this.auth.verifyToken, (req, res) => {
-            let date = new Date(req.body.fromDate);
+            let date = new Date(req.body.date);
             date.setHours(0,0,0,0);
             date = date.toISOString();
             date = date.split('T')[0];
@@ -53,7 +53,7 @@ class BookAppointmentRouter extends RouterBase {
         });
 
         this.router.post('/list', this.auth.verifyToken, (req, res) => {
-            let date = new Date(req.body.fromDate);
+            let date = new Date(req.body.date);
             date.setHours(0,0,0,0);
             date = date.toISOString();
             date = date.split('T')[0];
