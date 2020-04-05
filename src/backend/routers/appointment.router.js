@@ -9,9 +9,10 @@ class BookAppointmentRouter extends RouterBase {
         this.router.post('/book', this.auth.verifyToken, (req, res) => {
             let fromDate = new Date(req.body.fromDate);
             let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
+            date = date.toISOString().split('T')[0];
             let findObj = {
                 userId: req.userId,
-                date: date.toISOString().split('T')[0]
+                date: date
             }
             aptMdl.findOne(findObj, (err, apt) => {
                 if (err) {
@@ -38,7 +39,7 @@ class BookAppointmentRouter extends RouterBase {
                 if (!apt) {
                     let createObj = {
                         userId: req.userId,
-                        date: date.toISOString(),
+                        date: date,
                         bookings: [req.body]
                     }
                     aptMdl.create(createObj, (err, data) => {
@@ -53,9 +54,10 @@ class BookAppointmentRouter extends RouterBase {
         this.router.post('/list', this.auth.verifyToken, (req, res) => {
             let fromDate = new Date(req.body.fromDate);
             let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
+            date = date.toISOString().split('T')[0];
             let findObj = {
                 userId: req.userId,
-                date: date.toISOString().split('T')[0]
+                date: date
             }
             aptMdl.findOne(findObj, (err, apt) => {
                 if (err) {
