@@ -16,17 +16,17 @@
 
     <div class="card col-12 mb-5">
         <div class="row col-12">
-            <div class="col-4">Hi <b>{{userName}}</b> !</div>
-            <div class="col-4 text-center">
+            <div class="col-4 col-xs-12">Hi <b>{{userName}}</b> !</div>
+            <div class="col-4 col-xs-12 text-center">
                 <h2>Calendzy</h2>
             </div>
-            <div class="col-4 text-right" style="cursor: pointer;" onclick="logout()">
+            <div class="col-4 col-xs12 text-right" style="cursor: pointer;" onclick="logout()">
                 <b>Logout</b>
             </div>
         </div>
         <div class="row col-12">
             <div class="col-4"></div>
-            <div class="col-4 text-center">
+            <div class="col-4 col-xs-12 text-center">
                 <h7>The Calender Booking App</h7>
             </div>
             <div class="col-4"></div>
@@ -34,7 +34,7 @@
 
     </div>
     <div class="row col-12">
-        <div class="card col-8">
+        <div class="card col-8 col-xs-12">
             <h4 class="card-header" id="monthAndYear"></h4>
             <table class="table table-bordered" id="calendar">
                 <thead>
@@ -56,10 +56,10 @@
 
             <div class="form-inline">
 
-                <button class="btn btn-outline-primary col-sm-6" id="previous"
+                <button class="btn btn-outline-primary col-md-6 col-xs-12" id="previous"
                     onclick="calender.previous()">Previous</button>
 
-                <button class="btn btn-outline-primary col-sm-6" id="next" onclick="calender.next()">Next</button>
+                <button class="btn btn-outline-primary col-md-6 col-xs-12" id="next" onclick="calender.next()">Next</button>
             </div>
 
             <div class="row d-flex justify-content-center mt-3">
@@ -69,7 +69,7 @@
             </div>
             <br />
         </div>
-        <div class="card col-4">
+        <div class="card col-4 col-xs-12">
             <h4 class="card-header">Appointments</h4>
             <ul class="list-group" style="height:400px; overflow-y: scroll;" id="bookings">
             </ul>
