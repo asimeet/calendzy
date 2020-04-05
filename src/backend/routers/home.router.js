@@ -8,7 +8,7 @@ class HomeRouter extends RouterBase {
         this.router.get('/',this.auth.verifyToken,(req, res) => {
             this.userMdl.findOne({_id: req.userId}, (err, data) =>{
                 if(err) throw err;
-                let userName = data.name;
+                let userName = (data ? data.name : '');
                 res.render('home',{
                     userName: userName.toUpperCase()
                 }) 
