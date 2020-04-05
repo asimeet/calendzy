@@ -51,7 +51,8 @@ class BookAppointmentRouter extends RouterBase {
         });
 
         this.router.post('/list', this.auth.verifyToken, (req, res) => {
-            let date = new Date(req.body.fromDate);
+            let fromDate = new Date(req.body.fromDate);
+            let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
             let findObj = {
                 userId: req.userId,
                 date: date.toISOString()

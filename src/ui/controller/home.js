@@ -84,8 +84,7 @@ class Calender {
                     if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                         cell.classList.add("bg-info");
                         cell.classList.add("selected-date");
-                        let fromDate = new Date( today.getFullYear(), today.getMonth(), today.getDate());
-                        this.list(fromDate.toISOString());
+                        this.list(today.toISOString());
                     } // color today's date
                     //cell.appendChild(cellText);
                     cell.innerText = date;
@@ -130,7 +129,8 @@ class Calender {
         let date = event.toElement.innerText;
         event.toElement.classList.add('bg-info');
         event.toElement.classList.add('selected-date');
-        let fromDate = new Date(year, month, date).toISOString()
+        let currentDT =  new Date();
+        let fromDate = new Date(year, month, date, currentDT.getHours(),currentDT.getMinutes(), currentDT.getSeconds()).toISOString()
         calender.list(fromDate);
     }
     list(fromDate) {
