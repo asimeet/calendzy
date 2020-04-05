@@ -21,7 +21,7 @@ class BookAppointmentRouter extends RouterBase {
                 }
                 if (apt) {
                     let bookings = apt.bookings;
-                    let foundBooking = bookings.find(item => item.fromDate == req.body.fromDate);
+                    let foundBooking = bookings.find(item => item.fromTime == req.body.fromTime);
                     if (foundBooking) {
                         res.statusMessage = `The slot is already booked`;
                         res.status(500).send(res.statusMessage);

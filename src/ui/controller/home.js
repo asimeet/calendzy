@@ -178,8 +178,8 @@ class Calender {
         toDT.setHours(tohour, tomin, 0, 0);
         let body = {
             date: bookingDT.toISOString(),
-            fromDate: fromDT.toISOString(),
-            toDate: toDT.toISOString(),
+            fromTime: fromDT.toISOString(),
+            toTime: toDT.toISOString(),
             bookNotes: bookNotes
         }
         let xhttp = new XMLHttpRequest();
@@ -208,7 +208,7 @@ class Calender {
         bookings.innerHTML = "";
         dataArr = JSON.parse(dataArr);
         dataArr.sort((a, b) => {
-            if (a.fromDate > b.fromDate) {
+            if (a.fromTime > b.fromTime) {
                 return 1
             } else {
                 return -1
@@ -218,8 +218,8 @@ class Calender {
             let li = document.createElement("li");
             li.classList.add('list-group-item');
             let div1 = document.createElement('div');
-            let fromTime = new Date(item.fromDate).toLocaleTimeString();
-            let toTime = new Date(item.toDate).toLocaleTimeString();
+            let fromTime = new Date(item.fromTime).toLocaleTimeString();
+            let toTime = new Date(item.toTime).toLocaleTimeString();
             div1.innerHTML = `<b>FROM:</b> ${fromTime} <b>TO:</b> ${toTime}`
             let div2 = document.createElement('div');
             div2.innerText = `NOTES: ${item.bookNotes}`;
