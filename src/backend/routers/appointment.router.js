@@ -7,8 +7,8 @@ class BookAppointmentRouter extends RouterBase {
     prepareResponse() {
 
         this.router.post('/book', this.auth.verifyToken, (req, res) => {
-            let fromDate = new Date(req.body.fromDate);
-            let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
+            let date = new Date(req.body.fromDate);
+            date.setUTCHours(0,0,0,0);
             date = `${date.getUTCFullYear()}-${date.getUTCMonth()+1}-${date.getUTCDate()}`;
             let findObj = {
                 userId: req.userId,
@@ -52,8 +52,8 @@ class BookAppointmentRouter extends RouterBase {
         });
 
         this.router.post('/list', this.auth.verifyToken, (req, res) => {
-            let fromDate = new Date(req.body.fromDate);
-            let date = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
+            let date = new Date(req.body.fromDate);
+            date.setUTCHours(0,0,0,0);
             date = `${date.getUTCFullYear()}-${date.getUTCMonth()+1}-${date.getUTCDate()}`;
             let findObj = {
                 userId: req.userId,
