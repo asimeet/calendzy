@@ -4,7 +4,7 @@
   "description": "Calender Booking App",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,14 @@
   },
   "homepage": "https://github.com/asimeet/calendzy#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.9.7"
+    "express-handlebars": "^4.0.2",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "path": "^0.12.7"
   }
 }

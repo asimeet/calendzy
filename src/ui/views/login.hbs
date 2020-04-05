@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calendzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="card col-12 text-center mb-5">
+        <h2>Calendzy</h2>
+        <h7>The Calender Booking App</h7>
+    </div>
+    <div class="row d-flex justify-content-center mb-5">
+        <div class="row col-md-6">
+            <div id="sign-in-tab" class="col-6 text-center bg-info" style="cursor: pointer;"
+                onclick="formShow('sign-in-form')">
+                <h4 class="card-header" id="signIn">Sign In</h4>
+            </div>
+            <div id="sign-up-tab" class="col-6 text-center" style="cursor: pointer;" onclick="formShow('sign-up-form')">
+                <h4 class="card-header" id="signUp">Sign Up</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center" id="sign-in-form">
+        <div class="row col-md-6">
+            <div class="row col-12 mb-1 form-group required">
+                <div class="col-3"></div>
+                <div class="col-3">User Name</div>
+                <div class="col-6"><input required id="sign-in-user"></div>
+            </div>
+            <div class="row col-12 mb-1">
+                <div class="col-3"></div>
+                <div class="col-3">Password</div>
+                <div class="col-6"><input type="password" required id="sign-in-pass"></div>
+            </div>
+            <div class="row col-12 mt-4">
+                <div class="col-5"></div>
+                <div class="col-3">
+                    <button type="submit" onclick="signIn()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row  justify-content-center" id="sign-up-form" hidden="true">
+        <div class="row col-md-6">
+            <div class="row col-12 mb-1">
+                <div class="col-3"></div>
+                <div class="col-3">User Name</div>
+                <div class="col-6"><input id="sign-up-user" required></div>
+            </div>
+            <div class="row col-12 mb-1">
+                <div class="col-3"></div>
+                <div class="col-3">Email</div>
+                <div class="col-6"><input required id="sign-up-email"></div>
+            </div>
+            <div class="row col-12 mb-1">
+                <div class="col-3"></div>
+                <div class="col-3">Password</div>
+                <div class="col-6"><input type="password" required id="sign-up-pass"></div>
+            </div>
+            <div class="row col-12 mb-1">
+                <div class="col-3"></div>
+                <div class="col-3">Re-type Password</div>
+                <div class="col-6"><input type="password" required id="sign-up-repass"></div>
+            </div>
+            <div class="row col-12 mt-4">
+                <div class="col-5"></div>
+                <div class="col-3">
+                    <button type="submit" onclick="signUp()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-6 card text-center bg-danger mt-5" id="error-message" hidden="true"></div>
+    </div>
+
+
+
+
+
+    <script src="../controller/login.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+
+
+</body>
+
+</html>
