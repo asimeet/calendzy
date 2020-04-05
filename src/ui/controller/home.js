@@ -84,8 +84,7 @@ class Calender {
                     if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                         cell.classList.add("bg-info");
                         cell.classList.add("selected-date");
-                        let fromDate = new Date(today.getFullYear(), today.getMonth(), today.getDate())
-                        this.list(fromDate.toISOString());
+                        this.list(today.toISOString());
                     } // color today's date
                     //cell.appendChild(cellText);
                     cell.innerText = date;
