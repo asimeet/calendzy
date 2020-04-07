@@ -22,6 +22,10 @@ module.exports = {
     }
 
     if (!token && !init) {
+      if(req.baseUrl == '/home'){
+        res.redirect('/login');
+        return;
+      }
       return res.status(403).send({
         auth: false,
         message: 'No token provided.'
