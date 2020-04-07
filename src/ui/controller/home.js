@@ -142,7 +142,6 @@ class Calender {
                 let errMsg = document.getElementById("error-message")
                 errMsg.innerHTML = this.statusText;
                 errMsg.hidden = true;
-                document.getElementById("book-time-modal").close();
             }
             if (this.status != 200 && this.status != 0) {
                 let errMsg = document.getElementById("error-message")
@@ -162,6 +161,12 @@ class Calender {
     }
     book() {
         let bookNotes = document.getElementById('book-notes').value;
+        if(bookNotes.trim().length == 0){
+            let errMsg = document.getElementById("error-message");
+            errMsg.innerHTML = `Please fill out all fields to proceed`;
+            errMsg.hidden = false;
+            return;
+        }
         let fromtime = document.getElementById('from-time').value;
         let totime = document.getElementById('to-time').value;
         let fromhour = parseInt(fromtime.split(":")[0]);
@@ -228,7 +233,14 @@ class Calender {
             bookings.appendChild(li);
         });
     }
-}
+
+    clearErr(){
+        let errEl = document.getElementById("error-message");
+        errEl.hidden = true;
+        errEl.innerHTML = "";
+    }
+}   
+
 
 var calender = new Calender();
 

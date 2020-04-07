@@ -18,7 +18,7 @@ var signIn = function () {
     let pass = document.getElementById("sign-in-pass").value;
     if(user.trim()=='' || pass.trim()==''){
         let errMsg = document.getElementById("error-message")
-        errMsg.innerHTML = `All fields are manadatory`;
+        errMsg.innerHTML = `Please fill out all fields to proceed`;
         errMsg.hidden = false;
         return;
     }
@@ -70,7 +70,7 @@ function signUp(){
     let email = document.getElementById("sign-up-email").value;
     if(user.trim()=='' || pass.trim()=='' || repass.trim()=='' || email.trim()==''){
         let errMsg = document.getElementById("error-message")
-        errMsg.innerHTML = `All fields are manadatory`;
+        errMsg.innerHTML = `Please fill out all fields to proceed`;
         errMsg.hidden = false;
         return ;
     }
