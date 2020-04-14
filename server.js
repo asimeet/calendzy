@@ -3,7 +3,7 @@ const exphbs = require("express-handlebars");
 const path = require('path');
 const mongoose = require('mongoose');
 const hbsHelpers = require('./src/backend/lib/hbs-helpers');
-const config = require("./src/backend/config");
+const config = require("./src/backend/.config");
 const routers = require("./src/backend/routers");
 const auth = require('./src/backend/lib/auth')
 

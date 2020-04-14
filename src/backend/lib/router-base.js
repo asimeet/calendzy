@@ -1,5 +1,5 @@
 const express = require('express');
-const config = require ("../config");
+const config = require ("../.config");
 const userMdl = require ("./user-model");
 const auth =  require("./auth");
 
