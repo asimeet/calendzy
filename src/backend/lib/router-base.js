@@ -12,14 +12,7 @@ class RouterBase{
         this.prepareResponse();
     }
     prepareResponse(){
-        //to be inplemented by base classes
-    }
-    checkAuthenticated(req, res , next){
-        if( isAuth === true){
-            next();
-        }else{
-            res.send('UN-AUTHORIZED');
-        }
+        //to be inplemented by child classes
     }
 }
 
