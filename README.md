@@ -4,7 +4,7 @@
 <ul>Version: 0.0.1</ul>
 <b>
   <ul>
-    <a href="http://18.206.158.114:3009">Application URL</a>
+    <a href="https://radiant-plains-84710.herokuapp.com/">Application URL</a>
   </ul>
 </b>
 <b>Tech Stack</b>
